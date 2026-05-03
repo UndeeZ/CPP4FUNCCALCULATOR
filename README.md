@@ -1,0 +1,1 @@
+Heres a 4 func cpp calc cuz i had to test myself in some way while i learned it.
