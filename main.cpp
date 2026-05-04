@@ -1,65 +1,58 @@
 #include <iostream>
 #include <string>
-int value1 = 0;
-int value2 = 0;
-int result = 0;
-int operation;
-int i = 1;
-std::string option;
+
+
 
 int main() {
-
-
-while (i >= 1) {
+    std::string option;
+    double value1 = 0;
+    double value2 = 0;
+    double result = 0;
+    int operation;
+    bool running = true;
+while (running) {
     std::cout << "Welcome to my calculator \nYour Operations are: \n";
     std::cout << "1: Addition \n2: Subtraction \n3: Multiplying \n4: Division \n";
     std::cin >> operation;
+
+    std::cout << "Please enter your first value: ";
+    std::cin >> value1;
+
+    std::cout << "Please enter your second value: ";
+    std::cin >> value2;
+
     switch (operation) {
         case 1 :
-            std::cout << "Please enter your first value: ";
-            std::cin >> value1;
-            std::cout << "Please enter your second value: ";
-            std::cin >> value2;
             result = value1 + value2;
-            std::cout << "Your result is: " << result << std::endl;
             break;
-
         case 2 :
-            std::cout << "Please enter your first value: ";
-            std::cin >> value1;
-            std::cout << "Please enter your second value: ";
-            std::cin >> value2;
             result = value1 - value2;
-            std::cout << "Your result is: " << result << std::endl;
             break;
         case 3 :
-            std::cout << "Please enter your first value: ";
-            std::cin >> value1;
-            std::cout << "Please enter your second value: ";
-            std::cin >> value2;
             result = value1 * value2;
-            std::cout << "Your result is: " << result << std::endl;
             break;
         case 4 :
-            std::cout << "Please enter your first value: ";
-            std::cin >> value1;
-            std::cout << "Please enter your second value: ";
-            std::cin >> value2;
-            result = value1 / value2;
-            std::cout << "Your result is: " << result << std::endl;
-            break;
+            if (value2 == 0) {
+                std::cerr << "Error: Division by zero!\n";
+            } else {
+                result = value1 / value2;
+                std::cout << "Your result is: " << result << std::endl;
+            }
         default : std::cerr << "Wrong operation!" << std::endl;
     }
-        //Function runs while i = 1 so we give it a 0 when we want to stop it
-        std::cout << "Would you like to try again? (Y/N): ";
+    std::cout << "Your result is: " << result << std::endl;
+
+
+    //Function runs while i = 1 so we give it a 0 when we want to stop it
+    std::cout << "Would you like to try again? (Y/N): ";
             std::cin >> option;
             if (option == "Y" or option == "y") {
-                i = 1;
+                running = true;
             }
             else if (option == "N" or option == "n") {
-                i = 0;
+                running = false;
             }
-
+    return 0;
 }
 }
 
