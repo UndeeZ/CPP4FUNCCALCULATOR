@@ -42,18 +42,17 @@ while (running) {
     }
     std::cout << "Your result is: " << result << std::endl;
 
-
-    //Function runs while i = 1 so we give it a 0 when we want to stop it
     std::cout << "Would you like to try again? (Y/N): ";
-            std::cin >> option;
-            if (option == "Y" or option == "y") {
-                running = true;
-            }
-            else if (option == "N" or option == "n") {
-                running = false;
-            }
-    return 0;
+    std::cin >> option;
+    if (option == "Y" or option == "y") {
+        running = true;
+    }
+    else if (option == "N" or option == "n") {
+        running = false;
+    }
 }
+    return 0;
+
 }
 
 
